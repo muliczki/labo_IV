@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+
+
+  <body>
+
+
+    <main role="main"  >
+
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+
+          <div class="row">
+            <div *ngIf="listado.length==0"><h1>Lo sentimos, ningun resultado coincide con su búsqueda.</h1> 
+              <h3>Ingrese una nueva</h3></div>
+            <div class="col-sm-4"  *ngFor="let item of listado">
+              <div class="card mb-4 box-shadow"  >
+                <img class="card-img-top" src={{item.foto}}>
+                <div class="card-body">
+                  <p class="card-text">{{item.nombre}}</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary" (click)="mostrarDetalle(item)" >Ver detalles</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    </div>
+                    <!-- <small class="text-muted">{{item.fecha_estreno}}</small> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+        </div>
+            </div>
+
+
+           
+    </main>
+
+
+  </body>
+</html>
