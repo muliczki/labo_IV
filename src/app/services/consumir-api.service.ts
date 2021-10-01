@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class ConsumirApiService {
 
   apiKey: string = 'd178a7ef';
-  url = 'http://www.omdbapi.com/';
+  url = 'https://www.omdbapi.com/';
   constructor(private http:HttpClient) { }
 
   public ObtenerPeliculas(name:string, type:string){
