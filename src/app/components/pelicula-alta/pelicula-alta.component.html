@@ -32,7 +32,7 @@
             <!-- <span class="badge badge-secondary badge-pill">3</span> -->
           </h4>
           <!-- (paisElegido)= "setPaisActor($event) -->
-          <app-tabla-actor></app-tabla-actor>
+          <app-tabla-actor (actorElegido)="setActor($event)"></app-tabla-actor>
           <!-- <form class="card p-2" >
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Promo code">
@@ -66,10 +66,14 @@
                 <input type="text" formControlName="tipo"class="form-control" id="tipo" [(ngModel)]="pelicula.tipo" name="tipo" autocomplete="on" required>
             </div>
 
-            <!-- <div class="mb-3">
-              <label for="pais" class="form-label">Pais de nacimiento</label>
-              <input type="text" formControlName="pais" class="form-control" id="pais" readonly [(ngModel)]="actor.pais" name="pais" autocomplete="off" >
-          </div> -->
+            <div class="mb-3">
+              <label for="cantidad" class="form-label">Cantidad de Espectadores</label>
+              <input type="number" formControlName="cantidad_publico" class="form-control" id="cantidad_publico" [(ngModel)]="pelicula.cantidad_publico" name="cantidad" autocomplete="off" >
+          </div>
+          <div class="mb-3">
+            <label for="protagonista" class="form-label">Actor protagonista</label>
+            <input type="text" formControlName="protagonista" class="form-control" id="protagonista" readonly [(ngModel)]="actorNombreApellido" name="pais" autocomplete="off" >
+        </div>
             <div class="mb-3">
               <label for="foto" class="form-label">URL Foto Pelicula</label>
               <input type="text" class="form-control" formControlName="foto" id="foto" [(ngModel)]="pelicula.foto" name="foto" autocomplete="on" required>

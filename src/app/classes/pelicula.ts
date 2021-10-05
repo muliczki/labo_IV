@@ -5,5 +5,6 @@ export class Pelicula{
     fecha_estreno?:string;
     cantidad_publico?: number;
     foto?: string;
+    id_protagonista?: number;
 }
 

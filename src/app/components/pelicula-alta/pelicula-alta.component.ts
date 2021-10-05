@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Actor } from 'src/app/classes/actor';
 import { Pelicula } from 'src/app/classes/pelicula';
 import { PeliculaService } from 'src/app/services/peliculas/pelicula.service';
 
@@ -15,6 +16,8 @@ export class PeliculaAltaComponent implements OnInit {
   formulario:FormGroup
 
   public pelicula = new Pelicula();
+  public actorNombreApellido?:string;
+
   constructor(private peliculaService: PeliculaService, private fb:FormBuilder) { 
     this.formulario = fb.group({
       nombre: ["", Validators.required],
@@ -22,6 +25,7 @@ export class PeliculaAltaComponent implements OnInit {
       fecha_estreno: ["", Validators.required],
       foto: ["", Validators.required],
       cantidad_publico: ["", Validators.required],
+      protagonista: ["", Validators.required]
       
     })
   }
@@ -37,14 +41,17 @@ export class PeliculaAltaComponent implements OnInit {
     this.pelicula = new Pelicula();
   }
 
-  // public setPaisActor(pais:Pais){
-  //   // console.log(pais.nombre);
-  //   this.actor.pais = pais.nombre;
-  // }
+  public setActor(actor:Actor){
+    
+    this.actorNombreApellido = actor.nombre+ " "+ actor.apellido;
+    // console.log(pais.nombre);
+    this.pelicula.id_protagonista = actor.id;
+  }
 
     randomInteger(min:number, max:number) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }  
 
+  
 
 }

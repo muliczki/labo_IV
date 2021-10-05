@@ -26,7 +26,7 @@ export class TablaActorComponent implements OnInit {
 
   public seleccionarActor(data:any){
     this.seleccionado=data;
-    // console.log(this.seleccionado);
+    console.log(this.seleccionado);
     this.actorElegido.emit(this.seleccionado);
   }
 }
