@@ -1,8 +1,8 @@
 export class Pelicula{
-    id?:string;
+    id?:number;
     nombre?:string;
     tipo?:string;
-    fecha_estreno?:number;
+    fecha_estreno?:string;
     cantidad_publico?: number;
     foto?: string;
 }

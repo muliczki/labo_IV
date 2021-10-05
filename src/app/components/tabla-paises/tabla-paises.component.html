@@ -1,0 +1,35 @@
+<ul class="list-group mb-3">
+    <li class="list-group-item d-flex justify-content-between lh-condensed" *ngFor="let pais of listaPaises">
+      <div>
+        <!-- <small class="text-muted">Brief description</small> -->
+        <button class="btn btn-lg boton " (click)="seleccionarPais(pais)">
+          <div class="row justify-content-between padding px-sm-2">
+            <div class="column-3 p">
+              <p>{{pais.nombre}}</p>
+              
+  
+            </div>
+            <div class="column-3">
+              <img src={{pais.foto}} class='imgRedonda' />
+  
+            </div>
+
+          </div>
+            
+        </button>
+      
+      </div>
+      <div>
+        <!-- <img class="card-img-top" src={{pais.foto}}> -->
+      </div>
+
+      <!-- <p><a class="btn btn-primary"  role="button">Elegir</a></p> -->
+    </li>
+    
+
+    <!-- <select  [(ngModel)]="seleccionado">
+      <option *ngFor="let item of listaPaises" [ngValue]="item">{{item.nombre}}
+      </option>
+    </select> -->
+    
+  </ul>

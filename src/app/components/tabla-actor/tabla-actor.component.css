@@ -1,0 +1,14 @@
+.imgRedonda {
+    width:80px;
+    height:50px;
+    /* border-radius:150px; */
+}
+
+.boton{
+    width: 250px;
+    /* padding: 1px; */
+}
+
+p{
+    font-size: medium;
+}

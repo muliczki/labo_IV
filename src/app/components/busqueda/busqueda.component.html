@@ -1,14 +1,16 @@
 
 <body>
 
-  <app-navbar (busquedaNueva)="actualizarBusqueda($event)"></app-navbar>
+  <!-- <app-navbar (busquedaNueva)="actualizarBusqueda($event)"></app-navbar> -->
+  <app-navbar ></app-navbar>
   <main role="main">
     <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
         <h1 class="display-3">Listado de películas</h1>
-        <app-tabla-pelicula [listado]="listadoPeliculas" (peliculaElegida)= "mostrarPelieleccionada($event)"></app-tabla-pelicula>
+        <!-- (peliculaElegida)= "mostrarPelieleccionada($event) -->
+        <app-tabla-pelicula [listado]="listaPeliculas"  (peliculaElegida)= "mostrarPelieleccionada($event)"></app-tabla-pelicula>
         <!-- <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> -->
       </div>
@@ -22,7 +24,7 @@
 
         </div>
         <div class="col-4">
-          <app-detalle-pelicula [peliculaSeleccionada]="peliSeleccionada" [estado]="true"></app-detalle-pelicula>
+          <app-detalle-pelicula [peliculaSeleccionada]="peliSeleccionada" ></app-detalle-pelicula>
 
         </div>
         <div class="col-4">

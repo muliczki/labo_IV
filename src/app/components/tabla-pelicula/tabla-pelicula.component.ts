@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Pelicula } from 'src/app/pelicula';
+import { Pelicula } from 'src/app/classes/pelicula';
 import { ConsumirApiService } from 'src/app/services/consumir-api.service';
 
 @Component({

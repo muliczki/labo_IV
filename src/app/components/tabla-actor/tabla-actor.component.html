@@ -1,0 +1,34 @@
+<ul class="list-group mb-3">
+    <li class="list-group-item d-flex justify-content-between lh-condensed" *ngFor="let actor of listaActores">
+      <div>
+        <!-- <small class="text-muted">Brief description</small> -->
+        <button class="btn btn-lg boton " (click)="seleccionarActor(actor)">
+          <div class="row justify-content-between padding px-sm-2">
+            <div class="column-3 p">
+              <p>{{actor.nombre}} {{actor.apellido}} </p>
+              
+  
+            </div>
+            <div class="column-3">
+              <img src={{actor.foto}} class='imgRedonda' />
+  
+            </div>
+
+          </div>
+            
+        </button>
+      
+      </div>
+      <div>
+        <!-- <img class="card-img-top" src={{pais.foto}}> -->
+      </div>
+
+      <!-- <p><a class="btn btn-primary"  role="button">Elegir</a></p> -->
+    </li>
+
+    <!-- <select  [(ngModel)]="seleccionado">
+      <option *ngFor="let item of listaPaises" [ngValue]="item">{{item.nombre}}
+      </option>
+    </select> -->
+    
+  </ul>

@@ -1,11 +1,13 @@
 <!-- <div class="col-md-4"> -->
     <h2>Detalle</h2>
     <div *ngIf="estado; else noEstado">
-        <span>Pelicula: {{peliculaSeleccionada.nombre}}</span>
+        <span><b>Pelicula:</b> {{peliculaSeleccionada.nombre}}</span>
         <br>
-        <span>Año: {{peliculaSeleccionada.fecha_estreno}}</span>
+        <span><b>Fecha estreno:</b> {{peliculaSeleccionada.fecha_estreno}}</span>
         <br>
-        <span>Público: {{peliculaSeleccionada.cantidad_publico}}</span>
+        <span><b>Cantidad de espectadores: </b>{{peliculaSeleccionada.cantidad_publico}}</span>
+        <br>
+        <span><b>Tipo:</b> {{peliculaSeleccionada.tipo}}</span>
     </div>
     <ng-template #noEstado>
         <span>Seleccione una pelicula para ver el detalle</span>

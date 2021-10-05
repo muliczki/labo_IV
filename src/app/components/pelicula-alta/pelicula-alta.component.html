@@ -1,1 +1,86 @@
-<p>pelicula-alta works!</p>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="icon" href="../../../../favicon.ico"> -->
+
+    <title>Alta de Peliculas</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">  -->
+
+    <!-- Custom styles for this template -->
+    <link href="./pelicula-alta.component.css" rel="stylesheet">
+  </head>
+
+  <body class="bg-light">
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <!-- <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+        <h2>Alta Peliculas</h2>
+        <p class="lead">Complete los datos de la nueva pelicula.</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Elija actor de la pelicula</span>
+            <!-- <span class="badge badge-secondary badge-pill">3</span> -->
+          </h4>
+          <!-- (paisElegido)= "setPaisActor($event) -->
+          <app-tabla-actor></app-tabla-actor>
+          <!-- <form class="card p-2" >
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Promo code">
+              <div class="input-group-append">
+                <button type="submit" class="btn btn-secondary">Redeem</button>
+              </div>
+            </div>
+          </form> -->
+        </div>
+    
+
+
+
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3">Pelicula</h4>
+          <form [formGroup]="formulario" (ngSubmit)="agregarPelicula()">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input formControlName="nombre" type="text" class="form-control" id="nombre" [(ngModel)]="pelicula.nombre" name="nombre" autocomplete="on" >
+            </div>
+            <!-- <div class="mb-3">
+              <label for="apellido" class="form-label">Apellido</label>
+              <input type="text" formControlName="apellido" class="form-control" id="apellido" [(ngModel)]="actor.apellido" name="apellido" autocomplete="on" required>
+          </div> -->
+            <div class="mb-3">
+                <label for="fecha_estreno" class="form-label">Fecha de estreno</label>
+                <input type="date" formControlName="fecha_estreno"class="form-control" id="fecha_estreno" [(ngModel)]="pelicula.fecha_estreno" name="fecha_estreno" autocomplete="on" required>
+            </div>
+            <div class="mb-3">
+                <label for="tipo" class="form-label">Genero</label>
+                <input type="text" formControlName="tipo"class="form-control" id="tipo" [(ngModel)]="pelicula.tipo" name="tipo" autocomplete="on" required>
+            </div>
+
+            <!-- <div class="mb-3">
+              <label for="pais" class="form-label">Pais de nacimiento</label>
+              <input type="text" formControlName="pais" class="form-control" id="pais" readonly [(ngModel)]="actor.pais" name="pais" autocomplete="off" >
+          </div> -->
+            <div class="mb-3">
+              <label for="foto" class="form-label">URL Foto Pelicula</label>
+              <input type="text" class="form-control" formControlName="foto" id="foto" [(ngModel)]="pelicula.foto" name="foto" autocomplete="on" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary" [disabled]="formulario.invalid" >Agregar</button>
+          </form>
+        </div>
+    </div>
+
+
+    </div>
+</body>
+</html>
